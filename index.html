@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="card quiz-card">
+                <div class="card__header">
+                    <h1>Web Development Quiz</h1>
+                </div>
+                <div class="card__body">
+                    <div class="welcome-content">
+                        <h2>Welcome to the Quiz!</h2>
+                        <p>Test your knowledge of web development fundamentals including HTML, CSS, JavaScript, and more.</p>
+                        
+                        <div class="quiz-info">
+                            <div class="info-item">
+                                <span class="info-label">Questions:</span>
+                                <span class="info-value">10</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Time per question:</span>
+                                <span class="info-value">30 seconds</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Passing score:</span>
+                                <span class="info-value">70%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="instructions">
+                            <h3>Instructions:</h3>
+                            <ul>
+                                <li>Read each question carefully</li>
+                                <li>Select one of the four multiple choice answers</li>
+                                <li>You have 30 seconds per question</li>
+                                <li>Click your answer to proceed</li>
+                                <li>Your final score will be displayed at the end</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__footer">
+                    <button id="start-btn" class="btn btn--primary btn--lg btn--full-width">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <div class="progress-section">
+                    <div class="question-counter">
+                        <span id="question-number">1</span> of <span id="total-questions">10</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+                
+                <div class="timer-section">
+                    <div class="timer-display">
+                        <span id="timer-text">Time remaining:</span>
+                        <span id="timer-countdown">30</span>s
+                    </div>
+                </div>
+            </div>
+
+            <div class="card quiz-card">
+                <div class="card__body">
+                    <div class="question-section">
+                        <h2 id="question-text">Loading question...</h2>
+                        
+                        <div id="options-container" class="options-container">
+                            <button class="option-btn" data-option="0">
+                                <span class="option-letter">A</span>
+                                <span class="option-text"></span>
+                            </button>
+                            <button class="option-btn" data-option="1">
+                                <span class="option-letter">B</span>
+                                <span class="option-text"></span>
+                            </button>
+                            <button class="option-btn" data-option="2">
+                                <span class="option-letter">C</span>
+                                <span class="option-text"></span>
+                            </button>
+                            <button class="option-btn" data-option="3">
+                                <span class="option-letter">D</span>
+                                <span class="option-text"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card__footer">
+                    <button id="next-btn" class="btn btn--primary btn--lg btn--full-width hidden">Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen hidden">
+            <div class="card quiz-card">
+                <div class="card__header">
+                    <h1>Quiz Complete!</h1>
+                </div>
+                <div class="card__body">
+                    <div class="results-content">
+                        <div class="score-display">
+                            <div class="final-score">
+                                <span id="final-score">0</span> / <span id="total-score">10</span>
+                            </div>
+                            <div class="percentage-score">
+                                <span id="percentage-score">0</span>%
+                            </div>
+                        </div>
+                        
+                        <div id="performance-message" class="performance-message">
+                            <p>Great job!</p>
+                        </div>
+                        
+                        <div class="results-breakdown">
+                            <div class="breakdown-item correct">
+                                <span class="breakdown-label">Correct answers:</span>
+                                <span id="correct-count" class="breakdown-value">0</span>
+                            </div>
+                            <div class="breakdown-item incorrect">
+                                <span class="breakdown-label">Incorrect answers:</span>
+                                <span id="incorrect-count" class="breakdown-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__footer">
+                    <button id="restart-btn" class="btn btn--primary btn--lg btn--full-width">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
